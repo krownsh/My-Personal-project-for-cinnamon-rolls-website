@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/try.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- 文字飛入特效 -->
+    <link href="css/jquery-letterfx.css" rel="stylesheet" type="text/css" />
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+
+    <!--  -->
+    <!-- section6 -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/style5.css" /> -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Bangers"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- menu效果 -->
+    <link rel="stylesheet" type="text/css" href="css/style-menu.css" />
+
+    <script type="text/javascript" src="js/modernizr.custom.40443.js"></script>
+
+    <!--  -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <!-- 聊天窗口 -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- ***** Boostrap Custom / Addons Stylesheets ***** -->
+    <!-- <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <link href="assets/plugins/material_icon/icon.css" rel="stylesheet" />
+
+    <!-- Required CSS file for CSS Chat Panels element -->
+    <link
+      href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/chat_box.css"
+      type="text/css"
+      media="all"
+    />
+
+    <!-- 聊天窗口 -->
+
+    <!-- 確認載入react用 -->
+    <script>
+      console.log("React:", React);
+      console.log("ReactDOM:", ReactDOM);
+    </script>
+  </head>
+
+  <body>
+    <div id="loadingPage" style="display: block">
+      <div class="pageLoading">
+        <div class="monster monster1">
+          <div class="eye">
+            <div class="eyeball"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+        <div class="monster monster2">
+          <div class="eye">
+            <div class="eyeball eyeball2"></div>
+          </div>
+          <div class="mouth1"></div>
+        </div>
+      </div>
+      <div class="loading">
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <div id="mainPage" style="display: none">
+      <section>
+        <nav
+          style="position: fixed"
+          class="navbar navbar-expand-lg navbar-dark fixed-top py-2 m-0 pt-2"
+        >
+          <div class="navbarcat"></div>
+          <div class="container">
+            <div class="row">
+              <div>
+                <ul>
+                  <li><a href="./ltr/login-27.html">首頁</a></li>
+                  <li style="margin-right: 560px"><a href="#">菜單</a></li>
+                  <li><a href="#">關於</a></li>
+                  <li><a href="./訂購頁面with_vue.html">訂購</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          </div>
+        </nav>
+
+        <!-- 聊天窗口 -->
+        <div class="container perfect_scrollbar" id="container">
+          <div class="pvr_chat_button">
+            <i class="material-icons">chat</i>
+            <span>聊聊</span>
+          </div>
+          <div class="pvr_chat_wrapper">
+            <div class="pvr_chat_content">
+              <div class="close_chat">
+                <i class="material-icons">close</i>
+              </div>
+              <div class="chat_header">
+                <div class="pvr-user-w with-status status-green">
+                  <div class="pvr-user-avatar-w">
+                    <div class="user-avatar">
+                      <img alt="" src="./IMG/logo.jpg" />
+                    </div>
+                  </div>
+                  <div class="user-name">
+                    <h6 class="user-title">
+                      <a href="#" target="_blank">ONE Bite 官方諮詢</a>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-messages theme_2">
+                <div class="message">
+                  <div class="message-content">
+                    你好! 請問有甚麼可以幫您的嗎?
+                  </div>
+                </div>
+                <div class="date-break">星期三 10:00am</div>
+                <div class="message">
+                  <div class="message-content">也可以在這邊直接下單喔!</div>
+                </div>
+                <div class="message self">
+                  <div class="message-content">滾</div>
+                </div>
+              </div>
+              <div class="chat-controls">
+                <input
+                  class="message-input"
+                  id="message-input"
+                  placeholder="請友善發言"
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <header>
+          <video autoplay muted loop width="100%" height="100%">
+            <source src="/IMG/ONENITE宣傳.mp4" type="video/mp4" />
+          </video>
+        </header>
+      </section>
+      gj4vul4
+
+      <section class="section2">
+        <div class="milky">ONE-Bite經典口味</div>
+
+        <br />
+        <div align="center">
+          <div
+            class="carre_couleur base_hov"
+            style="background-color: rgb(245, 222, 197)"
+          >
+            <a target="_blank" href="#">
+              <div class="retract" style="background-color: rgb(245, 222, 197)">
+                <img src="img/1.png" />
+              </div>
+              <div class="acced">
+                <div class="big_acced">蜂狂肉桂捲春日微醺</div>
+                <div class="middle_acced">熱銷蜂狂肉桂捲，一吃就上癮</div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="carre_couleur base_hov"
+            style="background-color: rgb(245, 222, 197)"
+          >
+            <a target="_blank" href="http://www.moobnn.com">
+              <div class="retract" style="background-color: rgb(245, 222, 197)">
+                <img src="img/2.png" />
+              </div>
+              <div class="acced">
+                <div class="big_acced">經典肉桂原味</div>
+                <div class="middle_acced">原味肉桂，香氣滿溢</div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="carre_couleur base_hov"
+            style="background-color: rgb(245, 222, 197)"
+          >
+            <a target="_blank" href="http://www.moobnn.com">
+              <div class="retract" style="background-color: rgb(245, 222, 197)">
+                <img src="img/3.png" />
+              </div>
+              <div class="acced">
+                <div class="big_acced" ;>仲夏狂潮巧克力</div>
+                <div class="middle_acced">苦甜巧克力，美好傳千里</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="chobar">
+          <div class="container-fluid"> -->
+        <!-- <h4>本店專賣</h4> -->
+        <!-- <div class="row">
+              <div class="col-md section2div">
+                <img class="wow slideInLeft" src="./IMG/1.png" alt="" />
+
+                <h3>蜂狂肉桂捲春日微醺</h3>
+                <p>熱銷蜂狂肉桂捲，一吃就上癮</p>
+              </div>
+              <div class="col-md section2div">
+                <img src="./IMG/2.png" alt="" />
+                <h3>經典肉桂原味</h3>
+                <p>原味肉桂，香氣滿溢</p>
+              </div>
+              <div class="col-md section2div">
+                <img src="./IMG/3.png" alt="" />
+                <h3 class="wow8766">仲夏狂潮巧克力</h3>
+                <p>苦甜巧克力，美好傳千里</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <section class="section3">
+        <div class="milky">ONE-Bite的品牌故事</div>
+
+        <div class="se2-wrap">
+          <div class="se2-tile">
+            <div class="text">
+              <h1>品牌概念</h1>
+              <img src="./IMG/section3-1.png" />
+              <h2 class="animate-text">讓你one bite & one bite一口接一口</h2>
+              <p class="animate-text">
+                市面上的肉桂捲總是，又大顆又香甜，但是對於像我們這樣的年輕辣妹來說
+                ，雖然愛吃又得忌口，為了迎合現代人的健康飲食概念，創新推出一口一個的迷你肉桂捲。
+              </p>
+            </div>
+          </div>
+
+          <div class="se2-tile se2-tile-middle">
+            <div class="text">
+              <h1>ONE Bite 起源</h1>
+              <img src="./IMG/section3-3.png" />
+              <h2 class="animate-text">一個源自於大學生的創業概念</h2>
+              <br /><br />
+              <p class="animate-text">
+                從廚房到市場，一開始因為興趣開啟的肉桂捲事業，經過親朋好友的鼓勵，逐漸擴大銷售規模。
+              </p>
+            </div>
+          </div>
+
+          <div class="se2-tile">
+            <div class="text">
+              <h1>品牌價值</h1>
+              <img src="./IMG/section3-2.png" />
+              <h2 class="animate-text">美日新鮮手做，美味直送直送</h2>
+              <p class="animate-text">
+                從家裡廚房到顧客手上，顆顆都是手工現做不假手他人，無任何添加，相對於工廠生產，健康又可靠。
+              </p>
+              <div class="se2-dots">
+                <span></span> <span></span> <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div>
+          <div>
+            <h3>ONE-Bite的品牌故事</h3>
+          </div>
+          <div>
+            <p class="section3context">
+              麵包是我們對於生活的一種態度，「專注本業，勇敢開拓」，以開闊視野微觀麵包世界，期許團隊皆能站上國際舞台，善用台灣當地當季食材入味，研發創新嘗試，因為「好的設計是可見的，偉大的設計是隱形的」，唯有對料理用心，對食材鑽磨、對手藝精進，才能抓住消費者挑剔味蕾與忠誠的心。
+            </p>
+          </div>
+          <div>
+            <div>
+              <h4>食品業登錄字號 :</h4>
+              <p>目前沒有登錄</p>
+            </div>
+            <div>
+              <h4>公司/商業登記名稱 :</h4>
+              <p>目前還沒登記</p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div>
+
+        <div class="container section3content">
+          <div class="row">
+            <div class="col-md-7">
+              <h3>ONE-Bite的品牌故事</h3>
+              <p class="section3context">
+                麵包是我們對於生活的一種態度，「專注本業，勇敢開拓」，以開闊視野微觀麵包世界，期許團隊皆能站上國際舞台，善用台灣當地當季食材入味，研發創新嘗試，因為「好的設計是可見的，偉大的設計是隱形的」，唯有對料理用心，對食材鑽磨、對手藝精進，才能抓住消費者挑剔味蕾與忠誠的心。
+              </p>
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <h4>食品業登錄字號 :</h4>
+                  <p>目前沒有登錄</p>
+                  <img
+                    style="
+                      width: 100px;
+                      height: 100px;
+                      margin: -15px 0 0 0;
+                      float: right;
+                    "
+                    class="section3pic"
+                    src="./IMG/smileyface.png "
+                  />
+                </div>
+                <div class="col-md-6">
+                  <h4>公司/商業登記名稱 :</h4>
+                  <p>目前還沒登記</p>
+                  <img
+                    style="
+                      width: 100px;
+                      height: 100px;
+                      margin: -15px 0 0 0;
+                      float: right;
+                    "
+                    class="section3pic"
+                    src="./IMG/smileyface.png "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      </section>
+
+      <section class="section4">
+        <!-- <div style="position: relative">
+          <img src="./IMG/section4back.png" alt="" />
+          <h3>產品過敏原資訊</h3>
+          <div class="section4listbox">
+            <div>
+              <ul
+                class="section4list section4list1 d-flex flex-row justify-content-around mx-5"
+              >
+                <li>牛奶</li>
+                <li>雞蛋</li>
+                <li>皮蛋</li>
+                <li>麩質</li>
+                <li>大豆</li>
+              </ul>
+            </div>
+            <div>
+              <ul
+                class="section4list section4list2 d-flex flex-row-reverse justify-content-between mx-5"
+              >
+                <li>芝麻</li>
+                <li>咖啡因</li>
+                <li>蜂蜜</li>
+                <li>堅果</li>
+                <li>可可</li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <div
+          class="sec4-a"
+          style="
+            width: 450px;
+            height: 450px;
+            background-image: url(./IMG/c3.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 90%;
+            position: absolute;
+            top: 30%;
+            left: -25%;
+            transform: rotate(-45deg);
+            z-index: 99;
+          "
+        ></div>
+        <div
+          class="sec4-b"
+          style="
+            width: 450px;
+            height: 450px;
+            background-image: url(./IMG/c1.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+            z-index: 99;
+            top: 18%;
+            left: -25%;
+            transform: rotate(-28deg);
+          "
+        ></div>
+        <div
+          class="sec4-c"
+          style="
+            width: 450px;
+            height: 450px;
+            background-image: url(./IMG/c2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+            z-index: 99;
+            top: 20%;
+            left: -25%;
+            transform: rotate(51deg);
+          "
+        ></div>
+
+        <img
+          class="toggleimg-a"
+          style="top: 10%; right: -39%; z-index: 99; width: 600px; height: 240px
+          ; "
+          src="./IMG/介紹橫幅-檸檬.png"
+          alt=""
+        />
+        <img
+        class="toggleimg-b"
+        style="top: 62%; right: -39%; z-index: 99; width: 600px; height: 240px
+        ; "
+        src="./IMG/介紹橫幅-原味.png"
+        alt=""
+      />
+      <img
+      class="toggleimg-c"
+      style="top: 65%; right: -39%; z-index: 99; width: 600px; height: 240px
+      ; "
+      src="./IMG/介紹橫幅-巧克力.png"
+      alt=""
+    />
+
+        <!-- 讓背景模糊 -->
+        <span
+          style="
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(8px);
+            z-index: 98;
+          "
+        >
+        </span>
+        <!-- 小亂圖 -->
+        <div
+          style="
+            background-image: url(./IMG/ccc1.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc3.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc4.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc5.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc6.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc7.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc8.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc9.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc10.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc11.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc12.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc12.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc12.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+        <div
+          style="
+            background-image: url(./IMG/ccc2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: 100% 90%;
+          "
+        ></div>
+
+        <!-- <img src="./IMG/2.png" alt="">
+        <img src="./IMG/3.png" alt="">
+        <img src="./IMG/1.png" alt="">
+        <img src="./IMG/2.png" alt=""> -->
+        <!-- <header>
+          <video autoplay muted loop width="100%" height="100%">
+            <source src="/IMG/流動.mp4" type="video/mp4" />
+          </video>
+        </header> -->
+      </section>
+
+
+<section class="section6">
+  <div class="container">
+    <section class="main">
+      <div id="rm-container" class="rm-container">
+        <div class="rm-wrapper">  
+          <div class="rm-cover">
+            <div class="rm-front">
+              <div class="rm-content">
+                <div class="rm-logo"></div>
+                <h2>ONE Bite <br />新品<br />限量登場</h2>
+                <h3>
+                  ONE DAY DAY <br />
+                  ONLY BITE BITE BITE
+                </h3>
+
+                <a href="#" class="rm-button-open">點我看驚喜!</a>
+                <div class="rm-info">
+                  <p>
+                    有緣人不談錢&nbsp;談緣<br>每顆只要50元
+                  </p>
+                </div>
+              </div>
+              <!-- /rm-content -->
+            </div>
+            <!-- /rm-front -->
+
+            <div class="rm-back">
+              <div class="rm-content">
+                <h4>Hershey's重酒巧克力</h4>
+                <img src="./IMG/介紹橫幅-種酒巧克力.png" alt=""
+                style="width:670px ; height:320px">
+                
+              </div>
+              <img src="./IMG/吉娃娃.png" alt=""
+              style="width:250px ; height:250px;z-index: 999; position: absolute;
+              bottom:0;right:0" >
+
+              <!-- /rm-content -->
+              <div class="rm-overlay"></div>
+            </div>
+            
+            <!-- /rm-back -->
+          </div>
+          <!-- /rm-cover -->
+
+          <div class="rm-middle">
+            <div class="rm-inner">
+              <div class="rm-content">
+                <h4>台灣小農特選花生</h4>
+                <img src="./IMG/介紹橫幅-花生.png" alt=""
+                 style="width:670px ; height:320px">
+                
+              </div>
+              <img src="./IMG/SUPERCHI.png" alt=""
+              style="width:500px ; height:150px;z-index: 999; position: absolute;
+              bottom:40px;left:30px;transform: rotate(10deg);" >
+
+              <!-- /rm-content -->
+              <div class="rm-overlay"></div>
+            </div>
+            <!-- /rm-inner -->
+          </div>
+          <!-- /rm-middle -->
+        </div>
+        <!-- /rm-wrapper -->
+      </div>
+      <!-- /rm-container -->
+    </section>
+  </div>
+
+</section>
+
+
+
+
+
+      <section class="section6" data-letterfx="custom[5]">
+        <div>
+          <div class="milky">過敏原訊息</div>
+
+          <div class="jumbotron">
+            <p class="tagline">
+              ONE
+              Bite生產的肉桂捲，一律使用台灣在地生產原料，絕無色素及香精使用。
+              部分品項，包含易招致食品過敏之原料，依照衛福部食品過敏原標示之規定揭示。
+            </p>
+            <!-- <div class="btn-group"> -->
+            <!-- <button class="btn btn-default " data-letterfx="custom[5]">點我</button> -->
+            <!-- </div> -->
+          </div>
+          <div id="letter-container" class="letter-container">
+            <h2>
+              <a href=""
+                >雞蛋&nbsp;牛奶&nbsp;堅果&nbsp;麩質&nbsp;大豆&nbsp;芝麻&nbsp;可可</a
+              >
+            </h2>
+            <div class="content">
+              <p
+                style="
+                  font-size: 35px;
+                  position: absolute;
+                  bottom: 0;
+                  left: 18%;
+                  z-index: 999;
+                  color: gray;
+                "
+              >
+                本產品含有以上原料，不適合對其過敏體質者食用
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section5">
+        <div class="mywrap5">
+          <div>
+            <h3>本店位置</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.2042397133855!2d121.7619965150082!3d25.12878498392807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4e4aba4fd059%3A0x8b9c846c50af8169!2z6Ie654Gj5Z-66ZqG5Zyw5pa55rOV6Zmi!5e0!3m2!1szh-TW!2stw!4v1652292045247!5m2!1szh-TW!2stw"
+              width="750px"
+              height="650px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div style="width: 750px; height: 650px; margin-left: 60px">
+            <!-- <div class=" taiwanmap"> -->
+            <img
+              src="./IMG/taiwanmap.png"
+              alt=""
+              style="object-fit: cover; width: 850px; height: 850px"
+            />
+            <!-- </div> -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/try.js"></script>
+    <!-- 聊天窗口 -->
+    <script
+      src="assets/plugins/jquery/jquery-3.2.1.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="assets/plugins/backstretch/backstretch.js"
+      type="text/javascript"
+    ></script>
+    <script src="assets/js/app.js"></script>
+    <!-- 文字飛入特效 -->
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/tuxsudo.min.js"></script>
+    <script src="js/jquery-letterfx.js"></script>
+    <script src="js/demo.js"></script>
+
+    <!-- section6 -->
+    <!-- <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    ></script> -->
+    <script type="text/javascript" src="js/jquery.lettering.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $("#letter-container h2 a").lettering();
+      });
+    </script>
+    <!-- menu效果 -->
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        Menu.init();
+      });
+    </script>
+
+  </body>
+</html>

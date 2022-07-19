@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Alex Chin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'>
+<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <nav class="nav">
+    <h2 class="nav_header">購物車 </h2>
+    <div class="nav_cart">
+      <button @click="showCart =! showCart">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+      <span class="total_quantity">{{totalQuantity}}</span>
+      <div v-if="showCart " class="cart-dropdown">
+        <ul class="cart-dropdown-list">
+          <li
+            v-for="product in cart" 
+            :key="product.id"
+           >
+            {{product.name}}: {{product.quantity}}個</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="products">
+    <div 
+         v-for="product in products"
+         :key="product.id"
+         class="product"
+    >
+      <h3 class="product_header">{{product.name}}</h3>
+      <img 
+           :src= "product.image"       
+           :alt="product.name" 
+           class="product_image"
+           >
+           <!-- {{product.image}}  -->
+      <p class="product_description">{{product.description}}</p>
+      <div class="cart">
+        <button @click="updateCart(product , 'subtract')" class="cart_button">-</button>
+        <span class="cart_quantity">{{product.quantity}}</span>
+        <button @click="updateCart(product , 'add')" class="cart_button">+</button>
+      </div>
+    </div>
+  </section>
+  
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

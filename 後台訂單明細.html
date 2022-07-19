@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid p-0 ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <a class="navbar-brand" href="#">ONE-Bite商務後台</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link text-lg font-weight-bolder" href="#">首頁 <span
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-link text-lg font-weight-bolder" href="#">訂單 </a>
+                    <a class="nav-link text-lg font-weight-bolder" href="#">會員資料</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid ">
+        <div class="row my-4">
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="輸入關鍵字" data-toggle="tooltip"
+                        data-placement="top" title="輸入訂單編號、顧客名稱進行查詢" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">搜尋</button>
+                    </div>
+                </div>
+            </div>
+                <button class="btn btn-secondary ml-auto mr-5" type="button" data-toggle="modal"
+                    data-target="#rightconerbtn">新增資料</button>
+            <!-- <div class="col-sm-5 ml-auto  ">
+                <div class="card">
+                    <h5>篩選條件 : </h5>
+                    <div>
+                        <span>品項 :</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">原味</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">巧克力</label>
+                        </div>
+                    </div>
+                    <div>
+                        <span>出貨狀態 :</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">已完成</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">運送中</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox3">退貨</label>
+                        </div>
+                    </div>
+                    <div>
+                        <span>顧客備註 :</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">常客</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">奧客</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+    <div class="container-fluid table-responsive">
+        <table class="table  table-hover ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>訂單編號</th>
+                    <th>顧客姓名</th>
+                    <th>品項</th>
+                    <th>顧客標籤</th>
+                    <th>商品狀態</th>
+                    <th>訂單金額</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>36551</td>
+                    <td>霹靂原味肉桂捲</td>
+                    <td>王大明</td>
+                    <td>
+                        <span class="badge badge-primary text-md">常客</span>
+                    </td>
+                    <td>物流中</td>
+                    <td>NT$ 500</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th>3</th>
+                    <td>36552</td>
+                    <td>霹靂原味肉桂捲</td>
+                    <td>王大妹</td>
+                    <td>
+                        <span class="badge badge-info">新用戶</span>
+                    </td>
+                    <td>已收貨</td>
+                    <td>NT$ 600</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-danger">
+                    <th>3</th>
+                    <td>36553</td>
+                    <td>霹靂原味肉桂捲</td>
+                    <td>張阿佳</td>
+                    <td>
+                        <span class="badge badge-danger">奧客</span>
+                    </td>
+                    <td class="text-danger">取消</td>
+                    <td>NT$ 500</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td>36554</td>
+                    <td>靂肉桂霹原味捲</td>
+                    <td>李仁明</td>
+                    <td>
+                        <span class="badge badge-primary">常客</span>
+                    </td>
+                    <td>已收貨</td>
+                    <td>NT$ 500</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-danger">
+                    <th>5</th>
+                    <td>36555</td>
+                    <td>霹靂原味肉桂捲</td>
+                    <td>郭靜明</td>
+                    <td>
+                        <span class="badge badge-info">新用戶</span>
+                    </td>
+                    <td class="text-danger">取消</td>
+                    <td>NT$ 50</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td>36556</td>
+                    <td>原味肉桂霹靂捲</td>
+                    <td>蔡信吃</td>
+                    <td>
+                        <span class="badge badge-info">新用戶</span>
+                    </td>
+                    <td>已收貨</td>
+                    <td>NT$ 30</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td>36557</td>
+                    <td>霹靂原味肉桂捲</td>
+                    <td>吳阿東</td>
+                    <td>
+                        <span class="badge badge-primary">常客</span>
+                    </td>
+                    <td>物流中</td>
+                    <td>NT$ 560</td>
+                    <td>
+                        <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-secondary">修改</button>
+                            <button type="button" class="btn btn-outline-secondary">查看詳情</button>
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">其他
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">發送廣告</a>
+                                <a class="dropdown-item" href="#">標記</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr> -->
+            </tbody>
+
+        </table>
+
+
+        <nav aria-label="..." class="my-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item" active aria-current="page"><a class="page-link" href="#">1</a></li>
+                <li class="page-item ">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer class="text-center bg-light py-3 mt-5 fixed-bottom">
+        @ONE Bite後臺管理系統
+    </footer>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="rightconerbtn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        // modal事件
+        $(`#rightconerbtn`).on(`show.bs.modal`, function () {
+            var btn = $(event.relatedTarget)
+        })
+    </script>
+</body>
+
+</html>
